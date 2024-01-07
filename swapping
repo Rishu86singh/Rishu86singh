@@ -1,0 +1,29 @@
+def swap_digits(number, position1, position2):
+    # Convert the number to a string
+    num_str = str(number)
+
+    # Check if positions are within the range of the number's length
+    if 0 <= position1 < len(num_str) and 0 <= position2 < len(num_str):
+        # Convert string to list for easy swapping
+        num_list = list(num_str)
+
+        # Swap the digits at the specified positions
+        num_list[position1], num_list[position2] = num_list[position2], num_list[position1]
+
+        # Convert the list back to string and then to integer
+        swapped_number = int(''.join(num_list))
+
+        return swapped_number
+    else:
+        print("Invalid positions.")
+        return number
+
+# Example usage
+original_number = 12345
+position_to_swap1 = 1
+position_to_swap2 = 3
+
+result = swap_digits(original_number, position_to_swap1, position_to_swap2)
+
+print(f"Original number: {original_number}")
+print(f"Swapped number: {result}")
